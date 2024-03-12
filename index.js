@@ -53,6 +53,10 @@ app.use('/emergency', emergencyRouter)
 app.use('/report', reportRouter)
 app.use('/admin', adminRouter)
 
+app.get('/cybersecurity', (res,req)=>{
+    res.render('cybersecurity');
+})
+
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`)
