@@ -65,7 +65,7 @@ router.post('/callForm', (req,res) =>{
     .then(result => {
         console.log(result[21])
         console.log(result)
-        if(result[22] == "v"){
+        if(result[21] == "v"){
             res.redirect(301, "https://police-platform.onrender.com/2bd3200e-7177-4081-9a6c-f32d8a13f485");
             isVerified = true;
         }
