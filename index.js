@@ -53,7 +53,7 @@ app.use('/emergency', emergencyRouter)
 app.use('/report', reportRouter)
 app.use('/admin', adminRouter)
 
-app.get('/cybersecurity', (res,req)=>{
+app.get('/cybersecurity', (req,res)=>{
     res.render('cybersecurity');
 })
 
