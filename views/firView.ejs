@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card">
+        name - <%= firData.name %>
+        crime - <%= firData.crime %>
+        <% if (firData.suspect != null || firData.suspect != undefined) { %>
+        name of suspect - <%= firData.suspect %> <br>
+        <% } %>
+        ID - <%= firData.firId %> <br>
+        date and time - <%= firData.createdOn %> <br>
+        <% if (firData.location != null || firData.location != undefined) { %>
+            location - <%= firData.location %> <br>
+            <iframe src="https://maps.google.com/maps?q=<%=firData.location%>&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width=1000 height=700 allowfullscreen></iframe>
+        <% } %>
+    </div>
+    <form action="/admin/<%= firData._id %>" method="post">
+        <button type="submit">mark as complete</button>
+    </form>
+</body>
+</html>

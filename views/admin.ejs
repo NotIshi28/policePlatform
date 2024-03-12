@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>admin</h1>
+
+    <h2>active cases</h2>
+    <div class="cardGrp">
+        <% for( let i = 0; i < firData.length; i++ ) { %>
+            <% if (!firData[i].isComplete) { %>
+                <div class="card">
+                    ID - <%= firData[i].firId %> <br>
+                    <% if (firData[i].suspect != null || firData[i].suspect != undefined) { %>
+                        name of suspect - <%= firData[i].suspect %> <br>
+                    <% } %>
+                    crime - <%= firData[i].crime %><br>
+                    location - <%= firData[i].location %><br>
+                    date and time - <%= firData[i].createdOn %><br>
+                    <a href="/admin/<%= firData[i]._id %>">open</a>
+                </div>
+            <% } %>
+        <% } %>
+    </div>
+</body>
+
+<style>
+    .cardGrp{
+        display: flex;
+        flex-direction: row;
+        gap: 80px;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        height: auto;
+        outline: auto;
+        outline-offset: 5px;
+    }
+</style>
+
+</html>
